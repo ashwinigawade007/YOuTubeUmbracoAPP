@@ -17,14 +17,13 @@ namespace BusinessLogic.Controllers
     [PluginController("YouTube")]
     public class YouTubeApiController : UmbracoAuthorizedApiController
     {
-        //http://localhost:50533/umbraco/backoffice/YouTube/YouTubeApi/GetHello?name=warren
+        
         [HttpGet]
         public string GetHello(string name)
         {
             return "Hello " + name;
         }
-
-        //http://localhost:50533/umbraco/backoffice/YouTube/YouTubeApi/VideosForChannel
+        
         [HttpPost]
         public SearchListResponse VideosForChannel(ApiModel model)
         {
@@ -49,14 +48,14 @@ namespace BusinessLogic.Controllers
             }
         }
 
-        //http://localhost:50533/umbraco/backoffice/YouTube/YouTubeApi/ChannelFromId?channelId=1234
+        
         [HttpGet]
         public ChannelListResponse ChannelFromId(string channelId)
         {
             return YouTubeHelper.GetChannelFromId(channelId);
         }
 
-        //http://localhost:50533/umbraco/backoffice/YouTube/YouTubeApi/ChannelFromUsername?username=uHangout
+        
         [HttpGet]
         public ChannelListResponse ChannelFromUsername(string username)
         {
